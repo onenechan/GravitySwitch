@@ -14,11 +14,6 @@ public class GameOverScript : MonoBehaviour {
 	void Start () {
 		particle = this.GetComponent<ParticleSystem> ();
 	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
 
 	void OnTriggerEnter(Collider col){
 		Debug.Log ("yes");

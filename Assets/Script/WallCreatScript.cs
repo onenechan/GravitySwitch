@@ -17,8 +17,9 @@ public class WallCreatScript : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		timer += Time.deltaTime;
+		transform.position += new Vector3 (Time.deltaTime * PlayerScript.speed, 0, 0);
 		if (timer > interval) {
-			transform.position = new Vector3 (10, Random.Range (0, 2), -10); 
+			transform.position = new Vector3 (transform.position.x , Random.Range (0, 2), 0);
 			Instantiate (wall, transform.position, transform.rotation);
 			timer = 0;
 		}

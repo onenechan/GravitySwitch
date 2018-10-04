@@ -10,6 +10,8 @@ public class PlayerScript : MonoBehaviour {
 	public Text showScore;
 	bool flg = true;
 
+	public static float speed = 5.0f;
+
 
 	// Use this for initialization
 	void Start () {
@@ -19,13 +21,13 @@ public class PlayerScript : MonoBehaviour {
 	// Update is called once per frame
 	void Update (){
 		showScore.text = score.ToString ();
+		transform.position += new Vector3 (Time.deltaTime * speed, 0, 0);
 		timer += Time.deltaTime;
 		if (timer >= 4 && flg) {
 			Physics.gravity = new Vector3 (0, -9.8f, 0);
 			flg = false;
 		}
 		if (Input.GetKeyDown (KeyCode.Space)) {
-			Debug.Log ("yes");
 			if (Physics.gravity.y <= 0) {
 				Physics.gravity = new Vector3 (0, 20f, 0);
 			} else {
