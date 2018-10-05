@@ -4,16 +4,16 @@ using UnityEngine;
 
 public class DestroyScript1 : MonoBehaviour {
 
-	public static int DestroyCount1 = 0;
+	public GameObject wall1;
 
 	void Update(){
-		transform.position += new Vector3 (Time.deltaTime * PlayerScript.speed, 0, 0);
+		//transform.position += new Vector3 (Time.deltaTime * PlayerScript.speed, 0, 0);
 	}
 
 	void OnTriggerEnter(Collider col){
 		if (col.gameObject.tag == "Destroy") {
 			Destroy (col.gameObject);
-			DestroyCount1++;
+			Instantiate (wall1,new Vector3 (transform.position.x + 41, Random.Range (4, 6), 0) , transform.rotation);
 		}
 	}
 

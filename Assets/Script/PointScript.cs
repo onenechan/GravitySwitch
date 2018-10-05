@@ -5,12 +5,12 @@ using UnityEngine;
 public class PointScript : MonoBehaviour {
 
 	public float speed = 5.0f; 
+	public AudioSource audioSource;
 
 	void Start(){
 		transform.rotation = Quaternion.AngleAxis(45, new Vector3(1, 1, 0));
+		audioSource = this.gameObject.GetComponent<AudioSource>();
 	} 
-
-
 
 	void Update () {
 
@@ -20,7 +20,7 @@ public class PointScript : MonoBehaviour {
 	void OnTriggerEnter(Collider col){
 		if (col.gameObject.tag == "Player") {
 			PlayerScript.score++;
-			//Debug.Log (PlayerScript.score);
+			audioSource.Play ();
 			Destroy (this.gameObject);
 		}
 	}

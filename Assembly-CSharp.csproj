@@ -60,8 +60,6 @@
      <Compile Include="Assets\Script\PointGeneScr.cs" />
      <Compile Include="Assets\Script\PointScript.cs" />
      <Compile Include="Assets\Script\ScoreScript.cs" />
-     <Compile Include="Assets\Script\WallCreateScript1.cs" />
-     <Compile Include="Assets\Script\WallCreatScript.cs" />
      <Compile Include="Assets\Script\WallScript.cs" />
  <Reference Include="UnityEngine.CoreModule">
  <HintPath>/Applications/Unity/Unity.app/Contents/Managed/UnityEngine/UnityEngine.CoreModule.dll</HintPath>
