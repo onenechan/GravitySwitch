@@ -7,18 +7,20 @@ public class GameOverScript : MonoBehaviour {
 
 	public ParticleSystem particle;
 	public Text Score;
-	public Text HighScore;
-	public Text Retry;
+
+	public static bool gameover;
 
 	// Use this for initialization
 	void Start () {
 		particle = this.GetComponent<ParticleSystem> ();
+		gameover = false;
 	}
 
 	void OnTriggerEnter(Collider col){
 		Debug.Log ("yes");
 		Debug.Log (col.gameObject.tag);
 		if(col.gameObject.tag == "Enemy"){
+			gameover = true;  //Gameover検知
 			Debug.Log ("GAMEOVER");
 		}
 	}

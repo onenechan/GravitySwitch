@@ -51,7 +51,10 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\Script\CanvasScript.cs" />
      <Compile Include="Assets\Script\DestroyScript.cs" />
+     <Compile Include="Assets\Script\DestroyScript1.cs" />
+     <Compile Include="Assets\Script\GameController.cs" />
      <Compile Include="Assets\Script\GameOverScript.cs" />
      <Compile Include="Assets\Script\PlayerScript.cs" />
      <Compile Include="Assets\Script\PointGeneScr.cs" />
