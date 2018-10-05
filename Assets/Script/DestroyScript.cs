@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class DestroyScript : MonoBehaviour {
 
+	public GameObject wall;
+
 	public static int DestroyCount = 0;
 
 	void Update(){
@@ -14,6 +16,8 @@ public class DestroyScript : MonoBehaviour {
 		if (col.gameObject.tag == "Destroy") {
 			Destroy (col.gameObject);
 			DestroyCount++;
+
+			Instantiate (wall, transform.position + Vector3.right*32, transform.rotation);
 		}
 	}
 
