@@ -10,7 +10,11 @@ public class PlayerScript : MonoBehaviour {
 	public static int score; 
 	public Text showScore;
 	public GameObject explotion;
-
+	int pointcountMax;
+	private AudioSource audioSource;
+	public AudioClip audioClip1;
+	public AudioClip audioClip2;
+	public AudioClip audioClip3;
 
 	bool flg = true;
 
@@ -19,6 +23,8 @@ public class PlayerScript : MonoBehaviour {
 	void Start(){
 		speed = 8.0f;
 		score = 0;
+		pointcountMax = 0;
+		audioSource = gameObject.GetComponent<AudioSource>();
 	}
 
 	void Update (){
@@ -30,7 +36,12 @@ public class PlayerScript : MonoBehaviour {
 			} else {
 				Physics.gravity = new Vector3 (0, -20f, 0);
 			}
-			//Debug.Log (Physics.gravity);
+		}
+		if(PointScript.pointcount > pointcountMax){
+			Debug.Log ("nemui");
+			audioSource.clip = audioClip1;
+			audioSource.Play ();
+			pointcountMax = PointScript.pointcount;
 		}
 		if (GameOverScript.gameover == true && flg) {
 			speed = 0;

@@ -51,6 +51,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\Script\AsiotoScript.cs" />
      <Compile Include="Assets\Script\CanvasScript.cs" />
      <Compile Include="Assets\Script\DestroyScript.cs" />
      <Compile Include="Assets\Script\DestroyScript1.cs" />
